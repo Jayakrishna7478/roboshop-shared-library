@@ -7,7 +7,7 @@ def call(Map configMap){
         }
         environment { 
             packageVersion = ''
-             can maintain in pipeline globals
+            // can maintain in pipeline globals
              nexusURL = '172.31.8.127:8081'
         }
         options {
@@ -53,8 +53,7 @@ def call(Map configMap){
             stage('Sonar Scan'){
                 steps{
                     sh """
-                        echo "usually command here is sonar-scanner"
-                        echo "sonar scan will run here"
+                        sonar-scanner
                     """
                 }
             }
